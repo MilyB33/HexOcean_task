@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import {
   ToastContext,
   ToastContextType,
-} from '../../context/ToastContext';
+} from '../context/ToastContext';
 
 export const useToastMessage = () => {
   const { state, handleMessage } = useContext(

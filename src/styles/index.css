@@ -28,11 +28,28 @@
       0% 55%
     );
   }
+
+  .arrow-down {
+    width: 0;
+    height: 0;
+    position: relative;
+    left: 20px;
+    border-left: 0px solid transparent;
+    border-right: 25px solid transparent;
+
+    border-top: 60px solid theme(colors.surface.DEFAULT);
+  }
+
+  @media (min-width: 638px) {
+    .arrow-down {
+      border-top: 100px solid theme(colors.surface.DEFAULT);
+    }
+  }
 }
 
 @layer components {
   .input-default {
-    @apply p-1  text-text border-b-2 border-orange  outline-none;
+    @apply p-1  text-text-primary border-b-2 border-orange  outline-none;
   }
 
   .input-default:focus {

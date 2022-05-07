@@ -1,4 +1,4 @@
-import { useToastMessage } from '../hooks/useToastMessage';
+import { useToastMessage } from '../../hooks/useToastMessage';
 
 const ToastMessage = () => {
   const { state } = useToastMessage();
@@ -9,7 +9,7 @@ const ToastMessage = () => {
 
   return (
     <div
-      className={`absolute top-5 right-5 text-defaults-white p-2 rounded ${
+      className={`absolute top-5 right-5 text-text p-2 rounded ${
         state.type === 'error'
           ? 'bg-defaults-error'
           : 'bg-defaults-success'

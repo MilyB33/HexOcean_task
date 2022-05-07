@@ -5,7 +5,7 @@ module.exports = {
       text: {
         primary: '#000',
         secondary: '#6c757d',
-        DEFAULT: '#000',
+        DEFAULT: '#fff',
       },
       defaults: {
         error: '#f44336',
