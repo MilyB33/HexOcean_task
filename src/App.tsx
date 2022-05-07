@@ -1,5 +1,8 @@
+import { Outlet } from 'react-router-dom';
+import './styles/index.css';
+
 function App() {
-  return <div>dasd</div>;
+  return <Outlet />;
 }
 
 export default App;

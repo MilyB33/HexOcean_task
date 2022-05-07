@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface-100 font-primary;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities {
+  .clip-message {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 55%,
+      25% 55%,
+      5% 100%,
+      50% 55%,
+      0% 55%
+    );
+  }
+}
+
+@layer components {
+  .input-default {
+    @apply p-1  text-text border-b-2 border-orange  outline-none;
+  }
+
+  .input-default:focus {
+    @apply border-purple;
+  }
+}
