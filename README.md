@@ -46,3 +46,9 @@
     2. Run `npm install`
     3. Run `npm run dev`
     4. Server should run on 'http://localhost:3000/'
+
+---
+
+### Additional Info
+
+##### Check the 404 page in the project. :grin: :pizza:
