@@ -16,13 +16,15 @@ const DishForm = () => {
 
   return (
     <Form
-      onSubmit={async (values) => {
+      onSubmit={async (values, { restart }) => {
         const data = await Client.addDish(values);
 
         if (data.failed) handleError(data.message);
         else {
           handleSuccess(data.message);
+          // Here will be some dispatch to add data to store
           console.log(data.data);
+          restart();
         }
       }}
       destroyOnUnregister={true}
@@ -30,10 +32,11 @@ const DishForm = () => {
       {(props) => (
         <form
           onSubmit={props.handleSubmit}
-          className="grid gap-4 w-full rounded p-4 sm:p-10 sm:w-[500px] bg-surface shadow-lg"
+          className="grid gap-4 w-full p-4 sm:p-10 sm:w-[500px] bg-surface shadow-lg rounded"
         >
           <h2 className="text-center text-3xl sm:text-5xl text-purple">
             <span className="text-orange">Hi!</span> Add new dish
+            <div className="w-full h-1 bg-orange" />
           </h2>
 
           <Field
@@ -52,7 +55,7 @@ const DishForm = () => {
             component={CustomInput}
             type="time"
             step="1"
-            defaultValue="00:00:00"
+            initialValue="00:00:00" // here because of the bug in react-final-form
             validate={composeValidators(
               validator.required,
               validator.pattern(/[0-9]{2}:[0-9]{2}:[0-9]{2}/)

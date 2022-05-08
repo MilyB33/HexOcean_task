@@ -2,6 +2,7 @@ export interface IDish {
   id: number;
   name: string;
   preparation_time: string;
+  type: string;
   no_of_slices?: number;
   diameter?: number;
   spiciness_scale?: number;
@@ -9,7 +10,7 @@ export interface IDish {
 }
 
 export interface IReturn {
-  data?: Partial<Omit<IDish, 'id'>>;
+  data?: IDish;
   message: string;
   failed: boolean;
 }
